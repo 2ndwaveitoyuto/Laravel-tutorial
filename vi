@@ -1,0 +1,19 @@
+@extends('layouts.app')
+
+@section('app')
+
+<h1>posts.index</h1>
+
+    <ul>
+        @foreach ($posts as $post)
+            <li>
+                {{ link_to_route('posts.show', $post->title, [$post->id]) }}
+            </li>
+        @endforeach
+        <li>
+            {{ link_to_route('posts.create', '[new post]') }}
+        </li>
+    </ul>
+
+@endsection
+
